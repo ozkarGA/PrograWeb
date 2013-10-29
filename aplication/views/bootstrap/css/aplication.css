@@ -1,0 +1,97 @@
+body{
+    padding-top: 30px;
+    padding-bottom: 40px;
+}
+
+#page{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    background: white;
+    border: 1px solid #C9E0ED;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    background: white;
+    background-color: white;
+    border-width: 2px;
+    border-color: #999;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    -moz-box-shadow: 0px 0px 6px #000000;
+    -webkit-box-shadow: 0px 0px 6px black;
+    box-shadow: 0px 0px 6px black;
+}
+
+.navbar-inner{
+    background-color: #387038;
+}
+
+
+.format{
+    background-color:red;
+    padding-top: 10px;
+    padding-right: 20px;
+    padding-bottom: 30px;
+    padding-left: 20px;
+}
+.image{
+    width: 800px;
+    height: 350px;
+}
+
+.image2{
+    width: 260px;
+    height: 130px;
+}
+
+.justificado{
+    text-align : justify;
+    font-weight: bold;
+}
+.justificado h1{
+    text-align : justify;
+    font-weight: bold;
+}
+
+
+.padding
+{
+    padding-top:5px;
+    padding-bottom:5px;
+    padding-right:10px;
+    padding-left:10px;
+}
+.padding2
+{
+    padding-top:40px;
+}
+
+
+.color{
+    background-color: #d9edf7;
+}
+
+.color1{
+    background-color: #ECFFB3;
+}
+
+
+.fondo{
+    background-image: url('../../images/fondo_inicio2.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: 0% 100%;
+    background-size: cover;
+}
+
+.fondo_pantalla{
+    background-image: url('../../images/fondo.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: 0% 100%;
+    background-size: cover;
+}
+
+.formato{
+    font-size:1;
+}
