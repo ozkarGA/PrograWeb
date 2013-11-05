@@ -1,3 +1,4 @@
+
 <table border="1" >
     <tr>
         <th>Delegacion</th>
@@ -8,9 +9,9 @@
     <?php
         $proyectos = simplexml_load_file('prac3.xml');
         
-        
+        $tem = '';
         foreach($proyectos as $proyecto):
-            
+            if($tem != trim($proyecto->nmb_proyecto)):
                 ?>
                     <tr>
                         <td><?php echo $proyecto->nombre_tec; ?></td>
@@ -20,7 +21,7 @@
 
                     </tr>
                 <?php
-            
+            endif;
             $tem = trim($proyecto->nmb_proyecto);    
     
         endforeach;

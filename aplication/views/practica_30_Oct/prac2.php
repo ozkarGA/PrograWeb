@@ -8,20 +8,21 @@ arsort () - ordenar matrices asociativas en orden descendente, de acuerdo con el
 krsort () - ordenar matrices asociativas en orden descendente, de acuerdo con la clave
 */
 
-$frutas = array("d"=>"Limon", "a"=>"Naranja", "b"=>"Platano" "c"=>"Manzana");
+$frutas = array("d"=>"Limon", "a"=>"Naranja", "b"=>"Platano", "c"=>"Manzana");
 
 $frutas["e"]="Pera";
 
 ksort($frutas);
-foreach ($frutas as $key => $valor {
-    echo "$key = $valor<br/>";
+foreach ($frutas as $key => $valor) {
+    echo "<h1>$key:</h1> <h2>$valor</h2>";
+
 }
 
 echo "<hr/>";
 
 asort($frutas);
-foreach ($frutas to $key => $valor) {
-    echo "$key = $valor<br/>";
+foreach ($frutas as $key => $valor) {
+   echo "<h1>$key:</h1> <h2>$valor</h2>";
 }
 
 
