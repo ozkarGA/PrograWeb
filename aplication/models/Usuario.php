@@ -7,7 +7,7 @@
 					'nombre'=>array(),
 					'apellidos'=>array(),
 					'email'=>array(),
-			);
+		);
 
 		private $nombre;
 		private $apellidos;
@@ -17,6 +17,14 @@
 			parent::Modelo();
 		}
 
+		public function get_rs(){
+			$rs = array();
+			foreach($this->atributos as $key => $value){
+				$rs[$key]=$this->$key;
+			}
+			return $rs;
+		}
+			
 		public function set_nombre($valor){
 			$this->nombre = $valor;
 		}

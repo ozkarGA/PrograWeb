@@ -16,6 +16,11 @@ class Modelo extends Conexion{
 		$sql_insert = $this->db->GetInsertSQL($this->nombre_tabla,$rs);
 		return $this->get_error($this->db->Execute($sql_insert),'Error sql');
 	}
+
+	public function show_table($sql){
+		$grid = new ADODB_Pager($this->db,$sql);
+		$grid->Render('10');
+	}
 	
 	public function get_error($result,$tipo_error){
 		
