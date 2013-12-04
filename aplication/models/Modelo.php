@@ -7,6 +7,11 @@ class Modelo extends Conexion{
 		parent::Conexion();
 	}
 
+	public function consulta_by_sql(){
+		$rs = $this->db->Execute("SELECT * FROM ".$this->nombre_tabla);
+		return $rs;
+	}
+
 	public function consulta_datos(){
 		$rs = $this->db->Execute("SELECT * FROM ".$this->nombre_tabla);
 		return $rs;

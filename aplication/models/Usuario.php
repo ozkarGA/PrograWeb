@@ -7,11 +7,13 @@
 					'nombre'=>array(),
 					'apellidos'=>array(),
 					'email'=>array(),
+					'password'=>array(),
 		);
 
 		private $nombre;
 		private $apellidos;
 		private $email;
+		private $password;
 
 		function Usuario(){
 			parent::Modelo();
@@ -47,6 +49,13 @@
 			return $this->email;
 		}
 
+
+		public function set_password($valor){
+			$this->password = md5($valor);
+		}
+		public function get_password(){
+			return $this->password;
+		}
 
 
 	}

@@ -14,6 +14,7 @@ $usuario = new Usuario();
 		$usuario->set_nombre($_POST['nombre']);
 		$usuario->set_apellidos($_POST['apellidos']);
 		$usuario->set_email($_POST['email']);
+		$usuario->set_password($_POST['password']);
 
 		if( $usuario->inserta($usuario->get_rs()) ){
 			echo "usuario insertado";
@@ -32,6 +33,8 @@ $usuario = new Usuario();
 	<input type="text" id="apellidos" name="apellidos" > 
 	<label for="email">E-mail:</label>
 	<input type="text" id="email" name="email" > 
+	<label for="password">Password</label>
+	<input type="password" id="password" name="password" > 
 	<hr>
 	<input type="submit" value="insertar" class="btn"> 
 </form>
