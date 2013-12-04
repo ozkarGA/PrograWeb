@@ -1,4 +1,5 @@
 <?php
+	session_start();
 	include("../../models/Conexion.php");
 	include("../../models/Modelo.php");
 	include("../../models/Usuario.php");
@@ -10,21 +11,25 @@
 <h2>Lista de usuarios</h2>
 <?php
 $usuario = new Usuario();
-	if(isset($_POST['nombre'])){
-		
-		$usuario->set_nombre($_POST['nombre']);
-		$usuario->set_apellidos($_POST['apellidos']);
-		$usuario->set_email($_POST['email']);
 
-		if( $usuario->inserta($usuario->get_rs()) ){
-			echo "usuario insertado";
-		}else{
-			echo "usuario No insertado";
-		}
-		
-	}
-$usuario->show_table(" select nombre as Nombre, apellidos as Apellidos
-						from pw_usuarios ");	
+//$usuario->show_table(" select nombre as Nombre, apellidos as Apellidos, email, password
+//						from pw_usuarios ");	
+
+   echo "<pre>";
+   
+   echo "<h2>Array con las bases de datos</h2>";
+   print_r($usuario->consulta_sql("SHOW DATABASES;"));
+   
+   echo "<hr>";
+   
+   echo "<h2>Array con las tablas de la base de datos (clase)</h2>";
+   print_r($usuario->consulta_sql("SHOW TABLES FROM clase;"));
+    
+   echo "<h2>Array con los campos de la tabla pw_usuarios</h2>";
+   print_r($usuario->consulta_sql("SHOW COLUMNS FROM clase.pw_usuarios;"));
+
+   
+   echo "</pre>";
 ?>
 
 

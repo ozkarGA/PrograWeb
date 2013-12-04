@@ -1,4 +1,5 @@
 <?php
+	session_start();
 	include("../../models/Conexion.php");
 	include("../../models/Modelo.php");
 	include("../../models/Usuario.php");

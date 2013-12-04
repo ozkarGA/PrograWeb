@@ -27,8 +27,9 @@
                             
                            
                         </ul>
-                        <?php if (!isset($_SESSION['nombre'])): ?>  
+                        <?php if (!isset($_SESSION['session'])): ?>  
                             <div class="navbar-form pull-right">
+
                                 <a class="btn btn-small btn-primary" 
                                    href="<?php echo BASEURL; ?>views/site/login.php">
                                     Iniciar Sesion
@@ -36,9 +37,11 @@
                             </div> 
                         <?php else: ?>
                             <div class="navbar-form pull-right">
-                                <a class="btn btn-small btn-primary" 
-                                   href="<?php echo BASEURL; ?>views/site/login.php">
-                                    Cerrar Sesion
+
+                                <a class="btn btn-small btn-danger" 
+                                   href="<?php echo BASEURL; ?>views/site/logout.php">
+                                    Cerrar Sesion 
+                                    <span class="label"><?php echo $_SESSION['email']; ?></span>
                                 </a>
                             </div> 
                         <?php endif;?>

@@ -11,16 +11,32 @@
 		private $email;
 		private $password;
 
-		public function login(){
-			$rs = $this->consulta_by_sql(' where email = '.$this->email);
+		public function valida(){
+			$rs = $this->consulta_sql('select * from pw_usuarios where email = '.$this->email);
+			$rs = $rs->GetArray();
+		
 			if(count($rs) == 0){
-
+				return false;
 			}else{
-				if( $rs['password'] == md5($this->password)){
-					
+				if( trim($rs[0]['password']) == $this->password ){
+					return true;
+				}else{
+					return false;
 				}
 			}
 		}
+
+		public function iniciar_sesion(){
+			$_SESSION['session'] = true;
+			$_SESSION['email'] = $this->email;
+		}
+
+		public function cerrar_session(){
+			unset($_SESSION);
+			session_destroy();
+			return true;
+		}
+		
 
 
 		public function set_email($valor){
@@ -32,7 +48,7 @@
 
 
 		public function set_password($valor){
-			$this->password = md5($valor);
+			$this->password = md5(trim($valor));
 		}
 		public function get_password(){
 			return $this->password;
@@ -41,4 +57,4 @@
 
 	}
 
-?>	
+?>
