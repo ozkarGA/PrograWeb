@@ -12,21 +12,21 @@
 <?php
 $usuario = new Usuario();
 
-//$usuario->show_table(" select nombre as Nombre, apellidos as Apellidos, email, password
-//						from pw_usuarios ");	
+$usuario->show_table(" select nombre as Nombre, apellidos as Apellidos, email, password
+						from pw_usuarios ");	
 
    echo "<pre>";
    
    echo "<h2>Array con las bases de datos</h2>";
-   print_r($usuario->consulta_sql("SHOW DATABASES;"));
+   print_r($usuario->consulta_sql_array("SHOW DATABASES;"));
    
    echo "<hr>";
    
    echo "<h2>Array con las tablas de la base de datos (clase)</h2>";
-   print_r($usuario->consulta_sql("SHOW TABLES FROM clase;"));
+   print_r($usuario->consulta_sql_array("SHOW TABLES FROM clase;"));
     
    echo "<h2>Array con los campos de la tabla pw_usuarios</h2>";
-   print_r($usuario->consulta_sql("SHOW COLUMNS FROM clase.pw_usuarios;"));
+   print_r($usuario->consulta_sql_array("SHOW COLUMNS FROM clase.pw_usuarios;"));
 
    
    echo "</pre>";

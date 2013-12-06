@@ -9,6 +9,11 @@ class Modelo extends Conexion{
 
 	public function consulta_sql($sql){
 		$rs = $this->db->Execute($sql);
+		return $rs;
+    }
+	
+	public function consulta_sql_array($sql){
+		$rs = $this->db->Execute($sql);
 		return $rs->GetArray();
     }
 

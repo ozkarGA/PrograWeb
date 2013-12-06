@@ -12,9 +12,9 @@
 		private $password;
 
 		public function valida(){
-			$rs = $this->consulta_sql('select * from pw_usuarios where email = '.$this->email);
+			$rs = $this->consulta_sql("select * from pw_usuarios where email = '".$this->email."'");
 			$rs = $rs->GetArray();
-		
+			
 			if(count($rs) == 0){
 				return false;
 			}else{
@@ -27,6 +27,7 @@
 		}
 
 		public function iniciar_sesion(){
+			
 			$_SESSION['session'] = true;
 			$_SESSION['email'] = $this->email;
 		}
